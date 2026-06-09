@@ -197,7 +197,7 @@ body {
  
   /* ── localização ── */
   .map-card {
-    margin: 0 1rem;
+    margin: 0 0rem;
     background: #fff;
     border: 1px solid #e5e7eb;
     border-radius: 14px;
