@@ -14,7 +14,7 @@ body {
 
 /* logo */
 .logo {
-  background: #fff;
+  background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
   padding: 2.5rem 1.5rem 2rem;
   text-align: center;
@@ -303,7 +303,111 @@ body {
     .hero { border-radius: 0 0 16px 16px; }
   }
 
-/* ── Ajustes responsivos e imagens ── */
+  /* viewport mobile */
+  html, body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .logo, .versiculo, .section-label, .grid-2, .grid-3, .schedule, .social-row, .gallery, .map-card, .contact-card, footer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* wrapper do mapa com padding lateral */
+  .map-wrapper {
+    padding: 0 1rem;
+  }
+
+  /* botão do boletim */
+  .btn-gerador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 1rem;
+    padding: 14px 1rem;
+    background: var(--g1);
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    width: calc(100% - 2rem);
+    text-decoration: none;
+    transition: background 0.15s, box-shadow 0.15s;
+    letter-spacing: 0.01rem;
+  }
+
+  .btn-gerador:hover {
+    background: #007a1e;
+    box-shadow: 0 4px 14px rgba(0, 151, 36, 0.25);
+  }
+
+  .btn-gerador .icon { font-size: 20px; }
+
+  /* modal do qr code pix */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 1.5rem 1.25rem;
+    max-width: 320px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    animation: pop 0.2s ease;
+  }
+
+  @keyframes pop {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .modal-box h3{
+    color: var(--g1);
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-box p { font-size: 13px; color: #6b7280; margin-bottom: 1rem; }
+
+  .modal-box img {
+    width: 200px; height: 200px;
+    object-fit: contain;
+    margin: 0 auto 1rem;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .modal-close {
+    margin-top: 0.25rem;
+    background: #f3f5f6;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+  }
+
+  .modal-close:hover { background: #e5e7eb; }
+  
+
+/* ajustes responsivos e imagens */
 img { max-width: 100%; height: auto; display: block;  }
 
 @media (max-width: 479px) {

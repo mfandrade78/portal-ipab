@@ -12,7 +12,7 @@
 <header class="logo">
     <img src="fotos/logo-verde.jpg" alt="Logo da Igreja Presbiteriana do Abolição">
         <h1>Igreja Presbiteriana<br>do Abolição</h1>
-        <p>Mossoró-RN | Família da Aliança</p>
+        <p>Família da Aliança</p>
     </header>
 
     <!-- vou trocar o versículo de posição com o mapa -->
@@ -67,34 +67,33 @@
         <span class="name">Culto Solene</span>
         <span class="time">18h00</span>
     </div>
-</div>
+<!-- fim programação -->
 
 <!-- redes sociais -->
 <p class="section-label">Redes sociais</p>
 <div class="social-row">
     <a class="social-btn s-ig" href="https://instagram.com/ipabolicao" target="_blank">📸 Instagram</a>
-    <a class="social-btn s-yt" href="https://youtube.com/@IgrejaPresbiterianadoAbolição" target="_blank">▶ YouTube</a>
+    <a class="social-btn s-yt" href="https://youtu.be/ZlYee5wZZIo?si=OIgCRh3p3eL1TJXu" target="_blank">▶ História da Igreja</a>
     <!-- <a class="social-btn s-fb" href="https://facebook.com/SUAPAGINA" target="_blank">👤 Facebook</a> -->
 </div>
 
-<!-- mapa 
-<p class="section-label" id="mapa">Localização</p>
-<a class="map-card" href="https://maps.app.goo.gl/unHFGC5eE3q3Tww86" target="_blank">
-    <div class="map-preview">🗺️</div>
-    <div class="map-info">
-        <div class="addr">Rua Tarcisio Correia, 1 - Abolição III, Mossoró - RN, 59600-000</div>
-    </div>
-</a> -->
 
-<!-- galeria  <div class="gal-item">🎵<span>Louvor</span></div>
-  <div class="gal-item">➕<span>Ver mais</span></div>-->
-<p class="section-label">Galeria de fotos</p>
+<p class="section-label">Importante</p>
 <div class="gallery">
-  <div class="gal-item" img src="" alt="Foto da Igreja">🏛️<span>Igreja</span></div>
-  <div class="gal-item" img src="" alt="">🙏<span>Culto</span></div>
-  <div class="gal-item" img src="" alt="">📖<span>Boletim</span></div>
-  <div class="gal-item" img src="" alt="">👨‍👩‍👧<span>Membros</span></div>
-  
+    <div class="gal-item" onclick="document.getElementById('modal-pix').classList.add('open')">🏛️<span>Pix da Igreja</span></div>
+    <div class="gal-item">🙏<span>Culto</span></div>
+    <div class="gal-item">📖<span>Boletim</span></div>
+    <div class="gal-item">👨‍👩‍👧<span>Membros</span></div>
+</div>
+
+<!-- modal qr pix -->
+<div class="modal-overlay" id="modal-pix" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal-box">
+        <h3>💚 Pix - Igreja Presbiteriana do Abolição</h3>
+        <p>Escaneie o QR Code abaixo para contribuir</p>
+        <img src="fotos/qr-code-pix.jpg" alt="QR Code Pix da Igreja">
+        <button class="modal-close" onclick="document.getElementById('modal-pix').classList.remove('open')">Fechar</button>
+    </div>
 </div>
 
 <!-- contato -->
@@ -116,6 +115,11 @@
   </a>
 </div>
  
+<!-- botão gerador de boletim -->
+<p class="selection-label">Administração</p>
+<a class="btn-gerador" href="gerador_5.html" target="_blank">
+    <span class="icon">📋</span> Gerar Boletim Digital </a>
+
 <footer>
   <strong>Igreja Presbiteriana do Abolição</strong><br>
   Mossoró — RN · Por Matheus Cardoso ® Todos os direitos reservados
