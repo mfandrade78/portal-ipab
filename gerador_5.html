@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="author" content="Desenvolvimento por: Helder Souza | (83) 99606-8606">
+  <title>Boletim Digital IP Abolição</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
+    <style>
+    :root {
+      /* Paleta Institucional IP Abolição */
+      --cor-primaria: #0B6B5C;
+      --cor-primaria-2: #155346;
+      --cor-secundaria: #3F8C7C;
+      --cor-destaque: #D8E5DF;
+      --cor-destaque-suave: #EEF4F1;
+      --cor-fundo: #F4F1EC;
+      --cor-superficie: #FFFCF8;
+      --cor-superficie-2: #F8F5F0;
+
+      /* Textos e Utilitários */
+      --cor-texto: #1D2624;
+      --cor-texto-suave: #66716D;
+      --cor-borda: rgba(11, 107, 92, 0.14);
+      --cor-borda-forte: rgba(11, 107, 92, 0.24);
+      
+      /* Sombras padronizadas */
+      --sombra-suave: 0 10px 24px rgba(21, 83, 70, 0.05);
+      --sombra-card: 0 18px 40px rgba(21, 83, 70, 0.08);
+      --sombra-botao: 0 16px 30px rgba(11, 107, 92, 0.14);
+
+      /* Aliases legados */
+      --verde-escuro: var(--cor-primaria);
+      --cinza-suave: var(--cor-texto-suave);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(63, 140, 124, 0.12), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(11, 107, 92, 0.08), transparent 24%),
+        var(--cor-fundo);
+      color: var(--cor-texto);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a, button { -webkit-tap-highlight-color: transparent; outline: none; }
+
+    /* Ícones SVG base */
+    .icon-svg {
+      width: 1.25rem; height: 1.25rem; display: block; color: currentColor;
+      fill: none; stroke: currentColor; stroke-width: 2;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .icon-svg.fill { fill: currentColor; stroke: none; }
+
+    /* ── HERO / CAPA ── */
+    .capa {
+      background: linear-gradient(180deg, rgba(255, 252, 248, 0.92) 0%, rgba(248, 245, 240, 0.98) 100%);
+      min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 2rem 1.5rem 3rem; position: relative; overflow: hidden;
+      border-top: 6px solid var(--cor-primaria);
+    }
+    
+    .capa::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 220px;
+      background: radial-gradient(circle at center top, rgba(11, 107, 92, 0.18) 0%, rgba(11, 107, 92, 0.06) 38%, transparent 72%);
+      pointer-events: none;
+    }
+
+    .capa::after {
+      content: ''; position: absolute; inset: 18px;
+      border: 1px solid rgba(11, 107, 92, 0.08); border-radius: 32px; pointer-events: none;
+    }
+
+    .capa-inner {
+      position: relative; z-index: 1; text-align: center; max-width: 500px; width: 100%;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tag-domingo {
+      display: block; margin-bottom: 1.1rem; font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.1rem, 8vw, 3rem); font-weight: 700; color: var(--cor-primaria);
+      line-height: 1; letter-spacing: 0.01em;
+    }
+
+    .coracao-wrap {
+      margin: 1.2rem auto 1rem; width: min(260px, 78vw); max-width: 60vw; position: relative;
+      padding: 1.25rem 1.1rem; border-radius: 32px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(238, 244, 241, 0.92));
+      border: 1px solid rgba(11, 107, 92, 0.12); box-shadow: var(--sombra-card);
+    }
+
+    .coracao-wrap img { width: 100%; height: auto; object-fit: contain; transform: none; }
+
+    .titulo-tema {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(2.3rem, 8vw, 3.35rem);
+      font-style: normal; font-weight: 700; color: var(--cor-primaria);
+      line-height: 1.1; margin-top: 0; margin-bottom: 0.35rem;
+    }
+
+    .subtitulo-ref {
+      font-size: 0.82rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--cor-primaria-2); margin-bottom: 1.5rem;
+    }
+
+    .data-badge {
+      background: rgba(255, 255, 255, 0.75); border: 1px solid var(--cor-borda);
+      border-radius: 22px; padding: 1rem 1.6rem; display: inline-flex;
+      flex-direction: column; gap: 0.2rem; align-items: center; margin-bottom: 1.35rem;
+      box-shadow: var(--sombra-suave);
+    }
+
+    .data-badge span {
+      display: block; color: var(--cor-primaria-2); font-size: 0.72rem;
+      letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700;
+    }
+
+    .data-badge strong {
+      color: var(--cor-primaria); font-size: 1rem; font-weight: 700; letter-spacing: 0.03em;
+    }
+
+    .top-links {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; width: 100%; margin-bottom: 1.5rem;
+    }
+
+    .top-link {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      min-height: 52px; padding: 0.75rem 1rem; border-radius: 18px; border: 1px solid var(--cor-borda);
+      background: rgba(255, 255, 255, 0.86); color: var(--cor-primaria); text-decoration: none;
+      box-shadow: var(--sombra-suave); font-size: 0.82rem; font-weight: 700; line-height: 1.25;
+      transition: all 0.2s ease;
+    }
+
+    .top-link:hover, .top-link:active { transform: translateY(-2px); box-shadow: var(--sombra-botao); }
+
+    .top-link--radio { background: linear-gradient(135deg, rgba(11, 107, 92, 0.12), rgba(21, 83, 70, 0.16)); }
+
+    .assinatura-dev {
+      margin-top: 0.55rem; text-align: center; font-size: 0.56rem; line-height: 1.2;
+      letter-spacing: 0.03em; color: rgba(29, 38, 36, 0.28); user-select: none;
+    }
+
+    .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; width: 100%; }
+
+    .btn-menu {
+      background: rgba(255, 255, 255, 0.84); border: 1px solid var(--cor-borda);
+      border-radius: 24px; padding: 1.1rem 0.8rem; color: var(--cor-primaria);
+      cursor: pointer; text-align: center; text-decoration: none; display: flex;
+      flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem;
+      transition: all 0.2s ease; box-shadow: var(--sombra-suave); min-height: 104px;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-menu:hover, .btn-menu:active {
+      transform: translateY(-2px); background: rgba(238, 244, 241, 0.95);
+      border-color: rgba(11, 107, 92, 0.25); box-shadow: var(--sombra-botao);
+    }
+
+    .btn-menu .icone {
+      font-size: 1.5rem; line-height: 1; width: 3rem; height: 3rem; border-radius: 18px;
+      background: rgba(11, 107, 92, 0.08); border: 1px solid rgba(11, 107, 92, 0.1);
+      display: inline-flex; align-items: center; justify-content: center; color: var(--cor-primaria);
+    }
+
+    .btn-menu .label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; line-height: 1.2;
+    }
+
+    .btn-menu.destaque {
+      grid-column: span 2; background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-2));
+      border-color: var(--cor-primaria-2); color: var(--cor-superficie); flex-direction: row;
+      justify-content: center; gap: 0.9rem; padding: 1rem; min-height: auto; box-shadow: var(--sombra-botao);
+    }
+
+    .btn-menu.destaque .icone {
+      background: rgba(255, 255, 255, 0.15); border-color: rgba(255, 255, 255, 0.2); color: var(--cor-superficie);
+    }
+    
+    .btn-menu.destaque .label { color: var(--cor-superficie); }
+
+    .btn-menu.ultimo-item { grid-column: 1 / -1; max-width: 210px; width: 100%; justify-self: center; }
+    
+    @media (max-width: 520px) {
+      .top-links { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+      .top-link { min-height: 48px; padding: 0.7rem 0.8rem; font-size: 0.74rem; }
+      .btn-menu { border-radius: 16px; min-height: 94px; padding: 0.9rem 0.5rem; }
+      .btn-menu .label { font-size: 0.68rem; }
+      .btn-menu .icone { width: 2.6rem; height: 2.6rem; font-size: 1.3rem; }
+      .btn-menu.ultimo-item { max-width: none; }
+    }
+
+    /* ── SEÇÕES INTERNAS ── */
+    .secao { display: none; min-height: 100svh; background-color: var(--cor-fundo); animation: fadeUp 0.4s ease both; }
+    .secao.ativa { display: block; }
+
+    .secao-header {
+      background: linear-gradient(180deg, rgba(255, 252, 248, 0.96) 0%, rgba(248, 245, 240, 0.96) 100%);
+      padding: 2.5rem 1.5rem 2rem; position: relative; border-bottom: 1px solid var(--cor-borda);
+      border-top: 6px solid var(--cor-primaria);
+    }
+
+    .btn-voltar {
+      background: rgba(11, 107, 92, 0.08); border: 1px solid var(--cor-borda); color: var(--cor-primaria);
+      padding: 0.5rem 1.05rem; border-radius: 100px; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; display: inline-flex;
+      align-items: center; gap: 0.4rem; transition: all 0.2s ease;
+    }
+
+    .btn-voltar:hover, .btn-voltar:active { background: rgba(11, 107, 92, 0.14); }
+
+    .secao-icone-topo {
+      margin-top: 1.2rem; margin-bottom: 0.8rem; width: 3.15rem; height: 3.15rem;
+      border-radius: 18px; background: rgba(11, 107, 92, 0.08); border: 1px solid rgba(11, 107, 92, 0.1);
+      display: inline-flex; align-items: center; justify-content: center; font-size: 1.6rem; color: var(--cor-primaria);
+    }
+
+    .secao-titulo {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 6vw, 2.55rem);
+      font-weight: 700; font-style: italic; color: var(--cor-primaria); line-height: 1.1; margin-top: 0;
+    }
+
+    .secao-corpo { padding: 1.65rem 1.5rem 4rem; max-width: 640px; margin: 0 auto; }
+
+    /* Cards e Blocos Globais */
+    .card, .prog-dia, .liturgia-bloco, .aniv-list, .devoc-corpo, .catec-resposta {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 252, 248, 0.98));
+      border-radius: 16px; margin-bottom: 1rem; box-shadow: var(--sombra-card);
+      border: 1px solid var(--cor-borda); overflow: hidden;
+    }
+
+    .card { padding: 1.4rem; border-left: 4px solid var(--cor-secundaria); }
+
+    .card-titulo {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700;
+      color: var(--cor-primaria); margin-bottom: 0.55rem; text-transform: uppercase;
+    }
+
+    .versiculo-destaque {
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-2));
+      color: var(--cor-superficie); border-radius: 16px; padding: 1.55rem;
+      margin-bottom: 1.2rem; text-align: center; box-shadow: var(--sombra-botao);
+    }
+
+    .versiculo-destaque p {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.22rem; font-style: italic;
+      line-height: 1.6; margin-bottom: 0.6rem;
+    }
+
+    .versiculo-destaque .ref {
+      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cor-destaque);
+    }
+
+    /* Programação */
+    .prog-dia-titulo {
+      background: var(--cor-primaria); color: var(--cor-superficie); font-size: 0.7rem;
+      font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.7rem 1rem;
+    }
+
+    .prog-item {
+      display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem;
+      border-bottom: 1px solid rgba(11, 93, 59, 0.08);
+    }
+    .prog-item:last-child { border-bottom: none; }
+
+    .prog-hora { font-weight: 700; font-size: 0.85rem; color: var(--cor-primaria-2); min-width: 50px; }
+    
+    .prog-nome { font-size: 0.92rem; color: var(--cor-texto); }
+
+    /* Liturgia */
+    .liturgia-bloco-titulo {
+      background: var(--cor-primaria-2); color: var(--cor-superficie); font-size: 0.68rem;
+      font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.65rem 1rem;
+    }
+
+    .liturgia-item {
+      padding: 0.8rem 1rem; font-size: 0.9rem; border-bottom: 1px solid rgba(11, 93, 59, 0.08);
+      color: var(--cor-texto); display: flex; gap: 0.55rem;
+    }
+    .liturgia-item:last-child { border-bottom: none; }
+
+    .liturgia-item .leit { color: var(--cor-primaria); font-weight: 700; min-width: 14px; }
+
+    /* Estilos Clássicos da Liturgia Interna */
+    .lit-folha { text-align: center; padding: 0.4rem 0 0; max-width: 480px; margin: 0 auto; }
+    .lit-celebracao-cabecalho { margin-bottom: 1rem; }
+    
+    .lit-celebracao-titulo, .lit-celebracao-subtitulo {
+      font-family: 'Cormorant Garamond', serif; font-weight: 700; font-style: italic;
+      text-transform: uppercase; line-height: 1.1;
+    }
+    .lit-celebracao-titulo {
+      font-size: 1.1rem; color: var(--cor-primaria); letter-spacing: 0.02em; margin-bottom: 0.2rem;
+    }
+    .lit-celebracao-subtitulo { font-size: 1.25rem; color: var(--cor-texto); }
+    
+    .lit-maiusculo-italico { text-transform: uppercase; font-style: italic; color: var(--cor-primaria-2); }
+    
+    .lit-secao-verde {
+      color: var(--cor-secundaria); font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 700; font-style: italic; text-transform: uppercase; margin: 1rem 0 0.35rem;
+    }
+    
+    .lit-linha { margin-bottom: 0.3rem; }
+    
+    .lit-evento {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic;
+      color: var(--cor-texto); line-height: 1.2; margin-bottom: 0.15rem;
+    }
+    .lit-evento strong { font-weight: 700; }
+    
+    .lit-micro {
+      font-size: 0.65rem; font-style: italic; color: var(--cor-texto-suave); margin-bottom: 0.25rem;
+    }
+    
+    .lit-mensagem-titulo, .lit-mensagem-referencia {
+      font-family: 'Cormorant Garamond', serif; font-weight: 700; font-style: italic; line-height: 1.1;
+    }
+    .lit-mensagem-titulo { color: var(--cor-primaria); font-size: 1.1rem; text-transform: uppercase; margin-bottom: 0.1rem; }
+    .lit-mensagem-referencia { color: var(--cor-primaria-2); font-size: 1rem; margin-bottom: 0.2rem; }
+
+    /* Aniversários */
+    .aniv-item {
+      display: flex; align-items: center; gap: 1rem; padding: 0.95rem 1rem;
+      border-bottom: 1px solid rgba(11, 93, 59, 0.08);
+    }
+    .aniv-item:last-child { border-bottom: none; }
+
+    .aniv-dia {
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-2));
+      color: var(--cor-superficie); font-weight: 700; width: 38px; height: 38px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: var(--sombra-suave);
+    }
+    .aniv-nome { font-size: 0.92rem; color: var(--cor-texto); }
+
+    /* Dízimos */
+    .pix-card {
+      background: linear-gradient(145deg, var(--cor-primaria) 0%, var(--cor-primaria-2) 100%);
+      border-radius: 16px; padding: 1.6rem; color: var(--cor-superficie); margin-bottom: 1.2rem; box-shadow: var(--sombra-botao);
+    }
+    .pix-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem; }
+    .pix-linha {
+      display: flex; justify-content: space-between; align-items: center; padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15); font-size: 0.88rem;
+    }
+    .pix-chave-box {
+      background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 12px; padding: 0.9rem 1rem; margin-top: 1rem; display: flex;
+      align-items: center; justify-content: space-between;
+    }
+    .pix-label { font-size: 0.68rem; color: var(--cor-destaque); text-transform: uppercase; margin-bottom: 0.25rem; letter-spacing: 0.1em; }
+    .pix-val { font-weight: 700; font-size: 1.05rem; letter-spacing: 0.04em; }
+    .key { color: rgba(255, 255, 255, 0.8); }
+    .val { font-weight: 700; }
+
+    /* Devocional */
+    .devoc-corpo { padding: 1.55rem; line-height: 1.8; font-size: 0.95rem; }
+    .devoc-corpo p { margin-bottom: 1.1rem; color: var(--cor-texto); }
+    .assinatura {
+      text-align: right; font-family: 'Cormorant Garamond', serif; font-style: italic;
+      color: var(--cor-texto-suave); margin-top: 0.8rem; font-size: 1.05rem;
+    }
+
+    /* Catecismo / Símbolos de Fé */
+    .catec-pergunta {
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-2));
+      color: var(--cor-superficie); border-radius: 16px 16px 0 0; padding: 1.25rem 1.45rem;
+    }
+    .catec-pergunta p { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; }
+    .catec-resposta {
+      border-top: none; border-radius: 0 0 16px 16px; padding: 1.35rem 1.45rem;
+      font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.2rem;
+    }
+
+    /* História / Timeline */
+    .historia-abas { display: flex; gap: 0.65rem; margin-bottom: 1.5rem; }
+    .aba-btn {
+      flex: 1; padding: 0.8rem 0.5rem; border: 1px solid var(--cor-borda); border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 252, 248, 1));
+      color: var(--cor-primaria); font-weight: 700; cursor: pointer; display: flex; align-items: center;
+      justify-content: center; gap: 0.5rem; box-shadow: var(--sombra-suave); transition: all 0.2s ease;
+    }
+    .aba-btn.ativa { background: var(--cor-primaria); border-color: var(--cor-primaria); color: var(--cor-superficie); }
+    .aba-conteudo { display: none; }
+    .aba-conteudo.ativa { display: block; }
+    
+    .timeline { list-style: none; }
+    .timeline-item {
+      position: relative; padding: 0 0 1.8rem 2.2rem; border-left: 2px solid rgba(18, 160, 90, 0.4); margin-left: 0.8rem;
+    }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -0.55rem; top: 0.2rem; width: 1rem; height: 1rem;
+      border-radius: 50%; background: rgba(255, 255, 255, 0.86); border: 2px solid var(--cor-secundaria);
+      box-shadow: 0 0 0 3px var(--cor-fundo);
+    }
+    .timeline-ano {
+      font-size: 0.72rem; font-weight: 700; color: var(--cor-primaria); text-transform: uppercase;
+      letter-spacing: 0.15em; margin-bottom: 0.4rem;
+    }
+    .timeline-texto { font-size: 0.92rem; line-height: 1.7; color: var(--cor-texto); }
+    .timeline-versic {
+      display: inline-block; margin-top: 0.6rem; color: var(--cor-primaria-2); font-size: 0.85rem; font-style: italic; line-height: 1.6;
+    }
+
+    /* Utilitários e Outros */
+    .btn-download {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      background: var(--cor-primaria); color: var(--cor-superficie); padding: 0.7rem 1.2rem;
+      border-radius: 100px; font-size: 0.82rem; font-weight: 700; text-decoration: none;
+      margin-top: 0.8rem; box-shadow: var(--sombra-botao); border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .icone-bloco {
+      width: 3rem; height: 3rem; border-radius: 16px; background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda); display: inline-flex; align-items: center; justify-content: center;
+      color: var(--cor-primaria); box-shadow: var(--sombra-suave); font-size: 1.4rem;
+    }
+
+    .mapa-link, .drive-link, .copiar-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-weight: 700; color: var(--cor-primaria);
+    }
+
+    .aviso-imagem {
+      max-width: 100%; width: auto; max-height: 380px; display: block; margin: 1.2rem auto;
+      border-radius: 12px; box-shadow: var(--sombra-card); border: 1px solid var(--cor-borda); object-fit: contain;
+    }
+
+    .secao-nota { font-size: 0.78rem; color: var(--cor-texto-suave); padding-left: 1rem; margin-top: 1rem; font-style: italic; }
+
+    /* Rodapé Especial / EBD Customizacoes que existiam */
+    .rodape-secao {
+      text-align: center; margin-top: 2rem; padding: 2rem 1rem 1rem; border-top: 1px solid var(--cor-borda); position: relative;
+    }
+    .rodape-secao::after {
+      content: ''; display: block; width: 50px; height: 4px; background: var(--cor-primaria);
+      border-radius: 2px; margin: 1.5rem auto 0; opacity: 0.5;
+    }
+    .rodape-logo-text {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; color: var(--cor-primaria); margin-bottom: 0.5rem;
+    }
+    .rodape-versic { font-size: 0.9rem; font-style: italic; font-weight: 700; color: var(--cor-primaria-2); line-height: 1.6; }
+
+    #escola-dominical .secao-corpo>div:first-child {
+      background: var(--cor-superficie) !important; border-radius: 16px !important;
+      box-shadow: var(--sombra-card) !important; border: 1px solid var(--cor-borda); overflow: hidden;
+    }
+    #escola-dominical .secao-corpo>div:first-child img { border-bottom: 3px solid var(--cor-primaria) !important; }
+
+    /* Ajustes Mobile específicos para blocos que precisam quebrar */
+    @media (max-width: 520px) {
+      .secao-corpo, .secao-header { padding-inline: 1.2rem; }
+      .pix-chave-box, .pix-linha { flex-direction: column; align-items: flex-start; }
+      .pix-linha { gap: 0.3rem; }
+      .historia-abas { flex-direction: column; }
+      .aba-btn { width: 100%; }
+    }
+  
+    /* Accordion / Liderança */
+    .accordion-btn {
+      background: var(--cor-superficie); color: var(--cor-primaria); cursor: pointer; padding: 1.1rem;
+      width: 100%; text-align: left; border: none; outline: none; font-size: 1.05rem;
+      font-weight: 700; font-family: 'Cormorant Garamond', serif; border-bottom: 1px solid var(--cor-borda);
+      display: flex; justify-content: space-between; align-items: center; transition: background 0.2s;
+    }
+    .accordion-btn:hover { background: var(--cor-fundo); }
+    .accordion-btn.active { background: var(--cor-fundo); color: var(--cor-primaria-2); border-bottom: none; }
+    .accordion-btn::after { content: '+'; font-size: 1.5rem; font-weight: 300; color: var(--cor-primaria-2); }
+    .accordion-btn.active::after { content: '−'; }
+    .accordion-content {
+      padding: 0 1.2rem; background: var(--cor-fundo); display: none; overflow: hidden; border-bottom: 1px solid var(--cor-borda);
+    }
+    .accordion-content.show { display: block; padding: 1rem 1.2rem 1.5rem; }
+
+    /* Elementos Geométricos Sutis na Moldura Institucional */
+    .secao-header::before, .capa::before {
+      content: ''; position: absolute; top: -6px; left: 0; width: 25%; height: 6px; background: var(--cor-secundaria);
+    }
+    .secao-header::after, .capa::after {
+      content: ''; position: absolute; top: -6px; right: 0; width: 15%; height: 6px; background: var(--cor-destaque);
+    }
+
+    /* Valores List */
+    .valores-list {
+      list-style-type: decimal; padding-left: 1.2rem; color: var(--cor-texto); line-height: 1.8; font-size: 0.95rem;
+    }
+    .valores-list li { margin-bottom: 0.8rem; }
+    .valores-list li::marker { font-weight: 700; color: var(--cor-primaria); }
+
+    /* Ajuste específico para garantir que as classes funcionem */
+    .btn-classe {
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem; background: var(--cor-superficie);
+      border: 1px solid var(--cor-borda); padding: 1rem 0.5rem; border-radius: 12px; text-decoration: none;
+      color: var(--cor-primaria); font-weight: 700; font-size: 0.85rem; text-align: center; box-shadow: var(--sombra-suave);
+    }
+
+</style>
+
+</head>
+
+<body>
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="icon-cross" viewBox="0 0 24 24"><path d="M12 4v16M7 9h10" /></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><path d="M7 3v4M17 3v4M4 9h16M5 6h14a1 1 0 0 1 1 1v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1Z" /></symbol>
+    <symbol id="icon-music" viewBox="0 0 24 24"><path d="M10 19a2 2 0 1 1-4 0a2 2 0 0 1 4 0Zm8-2a2 2 0 1 1-4 0a2 2 0 0 1 4 0ZM10 19V6l8-2v13" /></symbol>
+    <symbol id="icon-scroll" viewBox="0 0 24 24"><path d="M8 4h8a3 3 0 0 1 0 6H8a3 3 0 1 0 0 6h9a3 3 0 0 1 0 6H8" /><path d="M9 7h6M9 13h7M9 17h6" /></symbol>
+    <symbol id="icon-people" viewBox="0 0 24 24"><path d="M8 11a3 3 0 1 0 0-6a3 3 0 0 0 0 6Zm8 1a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5Z" /><path d="M3.5 19a4.5 4.5 0 0 1 9 0M13 19a4 4 0 0 1 7.5-1.8" /></symbol>
+    <symbol id="icon-gift" viewBox="0 0 24 24"><path d="M12 9v11M4 12h16M5 9h14v11H5z" /><path d="M12 9H8.8A1.8 1.8 0 1 1 10 5.8L12 9Zm0 0h3.2A1.8 1.8 0 1 0 14 5.8L12 9Z" /></symbol>
+    <symbol id="icon-offering" viewBox="0 0 24 24"><path d="M12 4v16M8.5 8.5A2.5 2.5 0 0 1 11 6h3a2.5 2.5 0 0 1 0 5h-4a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 0 2.5-2.5" /></symbol>
+    <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M6 16h12M8 16V11a4 4 0 1 1 8 0v5M10 19a2 2 0 0 0 4 0" /></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M5 5.5A2.5 2.5 0 0 1 7.5 3H19v16H7.5A2.5 2.5 0 0 0 5 21z" /><path d="M5 5.5V21M9 7h6M9 11h6" /></symbol>
+    <symbol id="icon-building" viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-4l6 4v11M9 20v-4h6v4M9 11h.01M15 11h.01" /></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Z" /><path d="M12 12a2 2 0 1 0 0-4a2 2 0 0 0 0 4Z" /></symbol>
+    <symbol id="icon-folder" viewBox="0 0 24 24"><path d="M3 7.5A1.5 1.5 0 0 1 4.5 6H10l2 2h7.5A1.5 1.5 0 0 1 21 9.5v8A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z" /></symbol>
+    <symbol id="icon-copy" viewBox="0 0 24 24"><path d="M9 9h10v11H9zM5 5h10v2M5 5v11h2" /></symbol>
+  </svg>
+
+  <section class="capa" id="capa">
+    <div class="capa-inner">
+      <div class="tag-domingo">Boletim Digital</div>
+      <div class="coracao-wrap">
+        <img src="imagens/logo-igreja.png" alt="Logo IP Abolição" class="coracao-svg" style="object-fit: contain;">
+      </div>
+
+      <div class="data-badge">
+        <span>Domingo</span>
+        <strong>12 de abril de 2026</strong>
+      </div>
+
+      <div class="top-links">
+        <a href="https://maps.app.goo.gl/X56tp8R9VEHLuGiQ9" target="_blank"
+          class="top-link mapa-link">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="width: 1.02rem; height: 1.02rem;">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Localização</span>
+        </a>
+        <a href="https://radio.ipbabolicao.org/" target="_blank" class="top-link top-link--radio">
+          📻 Ouça Nossa Rádio
+        </a>
+      </div>
+      <div class="menu-grid">
+        <a class="btn-menu destaque" onclick="abrirSecao('devocional')"><span class="icone">✝️</span><span class="label">Devocional</span></a>
+        <a class="btn-menu" onclick="abrirSecao('liturgia')"><span class="icone">🕊️</span><span class="label">Liturgia</span></a>
+        <a class="btn-menu" onclick="abrirSecao('catecismo')"><span class="icone">📖</span><span class="label">Símbolo de Fé</span></a>
+        <a class="btn-menu" onclick="abrirSecao('escola-dominical')"><span class="icone">📚</span><span class="label">ED / Ensino</span></a>
+        <a class="btn-menu" onclick="abrirSecao('dizimos')"><span class="icone">🙏</span><span class="label">Dízimos</span></a>
+        <a class="btn-menu" onclick="abrirSecao('programacao')"><span class="icone">📅</span><span class="label">Nossas Atividades</span></a>
+        <a class="btn-menu" onclick="abrirSecao('avisos')"><span class="icone">📢</span><span class="label">Avisos</span></a>
+        <a class="btn-menu" onclick="abrirSecao('identidade')"><span class="icone">🏛️</span><span class="label">Conheça a Nossa Igreja</span></a>
+        <a class="btn-menu" onclick="abrirSecao('aniversariantes')"><span class="icone">🎂</span><span class="label">Aniversariantes</span></a>
+      </div>
+
+      <div style="text-align: center; margin-top: 1.5rem; margin-bottom: 0.5rem;">
+        <a href="#"
+          onclick="abrirSecao('avisos'); setTimeout(function(){ document.getElementById('uso-imagem').scrollIntoView({behavior: 'smooth'}); }, 100); return false;"
+          style="font-size: 0.75rem; color: var(--cinza-suave); text-decoration: none; opacity: 0.9;">
+          📸 Nossos cultos poderão ser filmados e fotografados. Toque para mais informações.
+        </a>
+      </div>
+
+      <div
+        style="display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-top: 1.75rem; padding: 1rem 1.2rem; border-radius: 24px; background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-2)); box-shadow: var(--sombra-botao); width: 100%;">
+        <img src="imagens/logo-ipabolicao-branca.jpeg" alt="Logo IP Abolição"
+          style="height: 84px; max-width: 46vw; width: auto; object-fit: contain;">
+        <div style="width:1px; height:58px; background:rgba(255,255,255,0.22);"></div>
+        <img src="imagens/logo-ipb-branca.png" alt="Logo IPB"
+          style="height: 52px; max-width: 32vw; width: auto; object-fit: contain;">
+      </div>
+      <div class="assinatura-dev" data-dev="Desenvolvimento por: Helder Souza | (83) 99606-8606">
+        Desenvolvimento por: Helder Souza | (83) 99606-8606
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="devocional">
+    <div class="secao-header">
+      <button class="btn-voltar" onclick="voltarCapa()">← Voltar</button>
+      <span class="secao-icone-topo">✝️</span>
+      <h2 class="secao-titulo">Devocional<br>da Semana</h2>
+    </div>
+    <div class="secao-corpo">
+      <div class="card">
+        <div class="card-titulo">Mensagem Pastoral</div>
+        <div class="ref" style="margin-top: 0.6rem;">Este espaço será preenchido pelo pastor.</div>
+      </div>
+      <div class="devoc-corpo">
+        <p>O devocional desta semana será inserido posteriormente.</p><p>Esta área foi deixada livre para atualização pastoral.</p>
+        <div class="assinatura">Aguardando preenchimento</div>
+      </div>
+
+      <div class="rodape-secao">
+        <div class="rodape-logo-text">IP Abolição</div>
+        <div class="rodape-versic">"Antes, o seu prazer está na lei do Senhor, e na sua lei medita de dia e de noite." —
+          Sl 1.2</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="programacao">
+    <div class="secao-header">
+      <button class="btn-voltar" onclick="voltarCapa()">← Voltar</button>
+      <span class="secao-icone-topo">📅</span>
+      <h2 class="secao-titulo">Nossas<br>Atividades</h2>
+    </div>
+    <div class="secao-corpo">
+
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h3
+          style="color: var(--verde-escuro); font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; margin-bottom: 1rem;">
+          Igreja Presbiteriana do Abolição</h3>
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <a href="https://maps.app.goo.gl/X56tp8R9VEHLuGiQ9" target="_blank"
+            class="mapa-link"
+            style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: rgba(11,107,92,0.08); color: var(--verde-escuro); padding: 0.7rem 1.25rem; border-radius: 100px; font-size: 0.85rem; font-weight: 700; text-decoration: none; border: 1px solid rgba(11,107,92,0.12);">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="width: 1.02rem; height: 1.02rem;">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Mossoró - RN • Ver localização</span>
+          </a>
+        </div>
+
+        <div class="prog-dia">
+          <div class="prog-dia-titulo">Domingo</div>
+          <div class="prog-item">
+            <span class="prog-hora">09:00</span>
+            <span class="prog-nome">Culto da manhã</span>
+          </div>
+          <div class="prog-item">
+            <span class="prog-hora">10:00</span>
+            <span class="prog-nome">Escola Dominical</span>
+          </div>
+          <div class="prog-item">
+            <span class="prog-hora">18:00</span>
+            <span class="prog-nome">Culto da noite</span>
+          </div>
+        </div>
+
+        <div class="prog-dia">
+          <div class="prog-dia-titulo">Terça-feira</div>
+          <div class="prog-item">
+            <span class="prog-hora">19:30</span>
+            <span class="prog-nome">Reunião de oração (online)</span>
+          </div>
+        </div>
+
+        <div class="prog-dia">
+          <div class="prog-dia-titulo">Quinta-feira</div>
+          <div class="prog-item">
+            <span class="prog-hora">19:30</span>
+            <span class="prog-nome">Reunião de doutrina (igreja)</span>
+          </div>
+        </div>
+
+        <div class="card" style="text-align:center; border-left-color: var(--cor-secundaria); margin-top: 1.4rem;">
+          <div class="card-titulo" style="color: var(--cor-secundaria);">Rádio IP Abolição</div>
+          <p style="font-size:0.9rem; color:var(--cor-texto-suave); margin-bottom:0.9rem;">Acompanhe a programação e conteúdos da igreja pela rádio oficial.</p>
+          <a href="https://radio.ipbabolicao.org/" target="_blank" class="btn-download">📻 Acessar a rádio</a>
+        </div>
+      </div>
+
+      <div class="rodape-secao">
+        <div class="rodape-logo-text">IP Abolição</div>
+        <div class="rodape-versic">"Alegrei-me quando me disseram: Vamos à casa do Senhor." — Salmo 122.1</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="liturgia">
+    <div class="secao-header">
+      <button class="btn-voltar" onclick="voltarCapa()">← Voltar</button>
+      <span class="secao-icone-topo">🕊️</span>
+      <h2 class="secao-titulo">Liturgia</h2>
+    </div>
+    <div class="secao-corpo">
+
+      <div class="abas" style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2rem;">
+        <button class="aba-btn ativa" onclick="trocarAba('lit-matutino')">Culto Matutino</button>
+        <button class="aba-btn" onclick="trocarAba('lit-celebracao')">Culto Noturno</button>
+      </div>
+
+      <div id="aba-lit-matutino" class="aba-conteudo ativa">
+        <div class="lit-folha">
+          <div class="lit-celebracao-cabecalho">
+            <div class="lit-celebracao-titulo">CULTO MATUTINO – 12 de abril de 2026</div>
+            <div class="lit-celebracao-subtitulo">LITURGIA</div>
+          </div>
+          <div class="lit-secao-verde">I - O SENHOR NOS CHAMA A ADORAÇÃO</div>
+<div class="lit-linha">
+  <div class="lit-evento">Leitura: <strong>Salmos 119.169-176</strong></div>
+  <div class="lit-evento">Oração</div>
+</div>
+
+<div class="lit-secao-verde">II - O SENHOR NOS CHAMA À CONFISSÃO</div>
+<div class="lit-linha">
+  <div class="lit-evento">Leitura: <strong>Habacuque 3.1-19</strong></div>
+  <div class="lit-micro">Leitura alternada</div>
+  <div class="lit-evento">Oração</div>
+  <div class="lit-evento">Louvor de gratidão pelo perdão: <strong>Perdão (HNC 71)</strong></div>
+</div>
+
+<div class="lit-secao-verde">III - O SENHOR NOS CHAMA À LOUVAR E AGRADECER</div>
+<div class="lit-linha">
+  <div class="lit-evento">Leitura continuada das Escrituras: <strong>Hebreus 11.23-40</strong></div>
+  <div class="lit-micro">Leitura alternada • igreja de pé</div>
+  <div class="lit-evento">Dízimos e ofertas</div>
+  <div class="lit-evento">Louvor: <strong>Pendão Real (HNC 303)</strong></div>
+  <div class="lit-evento">Oração</div>
+</div>
+
+<div class="lit-secao-verde">IV - SENHOR, TU FALAS À TUA IGREJA</div>
+<div class="lit-linha">
+  <div class="lit-evento">Oração por iluminação</div>
+  <div class="lit-evento">Sermão: <strong></strong></div>
+</div>
+
+<div class="lit-secao-verde">V - O SENHOR NOS CHAMA À CONFESSAR A NOSSA FÉ</div>
+<div class="lit-linha">
+  <div class="lit-evento">Declaração de fé: <strong>Credo Niceno</strong></div>
+  <div class="lit-evento">Oração final</div>
+  <div class="lit-evento">Doxologia <strong>(HNC 06)</strong></div>
+</div>
+        </div>
+      </div>
+
+      <div id="aba-lit-celebracao" class="aba-conteudo">
+        <div class="lit-folha">
+          <div class="lit-celebracao-cabecalho">
+            <div class="lit-celebracao-titulo">CULTO NOTURNO – {{DATA_BOLETIM}}</div>
+            <div class="lit-celebracao-subtitulo">LITURGIA</div>
+          </div>
+          <div class="lit-secao-verde">I - SENHOR, NOS CHAMA À ADORAÇÃO</div>
+<div class="lit-linha">
+  <div class="lit-evento">Leitura: <strong>Salmo 63</strong></div>
+  <div class="lit-evento">Oração de adoração</div>
+  <div class="lit-evento">Louvor: <strong>Salmo 63</strong></div>
+</div>
+
+<div class="lit-secao-verde">II - SENHOR, NOS CHAMA À CONFISSÃO</div>
+<div class="lit-linha">
+  <div class="lit-evento">Leitura: <strong>Salmo 32.1-9</strong></div>
+  <div class="lit-micro">Leitura alternada</div>
+  <div class="lit-evento">Oração de confissão</div>
+  <div class="lit-evento">Declaração de perdão: <strong>Salmo 32.10-11</strong></div>
+  <div class="lit-evento">Louvor: <strong>Descanso em Jesus (HNC 70)</strong></div>
+</div>
+
+<div class="lit-secao-verde">III - SENHOR, NOS CHAMA AO LOUVOR E GRATIDÃO</div>
+<div class="lit-linha">
+  <div class="lit-evento">Leitura: <strong>Apocalipse 19.1-10</strong></div>
+  <div class="lit-micro">Leitura alternada • igreja de pé</div>
+  <div class="lit-evento">Louvor: <strong>Novos céus</strong></div>
+  <div class="lit-evento">Dízimos e ofertas</div>
+  <div class="lit-evento">Oração <strong>(Diácono)</strong></div>
+</div>
+
+<div class="lit-secao-verde">IV - SENHOR, TU FALAS À TUA IGREJA</div>
+<div class="lit-linha">
+  <div class="lit-evento">Sermão: <strong></strong></div>
+  <div class="lit-evento">Oração por iluminação</div>
+</div>
+
+<div class="lit-secao-verde">V - SENHOR, TE OUVIMOS E NOS CONSAGRAMOS</div>
+<div class="lit-linha">
+  <div class="lit-evento">Louvor: <strong>Belas Palavras de Vida (HNC 351)</strong></div>
+  <div class="lit-evento">Oração final</div>
+  <div class="lit-evento">Benção pactual</div>
+  <div class="lit-evento">Doxologia <strong>(HNC 06)</strong></div>
+</div>
+        </div>
+      </div>
+
+      <div class="rodape-secao" style="margin-top: 1rem;">
+        <div class="rodape-logo-text">IP Abolição</div>
+        <div class="rodape-versic">"Adorai ao Senhor na beleza da sua santidade." — Sl 29.2</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="catecismo">
+    <div class="secao-header">
+      <button class="btn-voltar" onclick="voltarCapa()">← Voltar</button>
+      <span class="secao-icone-topo">📜</span>
+      <h2 class="secao-titulo">Símbolos<br>de Fé</h2>
+    </div>
+    <div class="secao-corpo">
+
+      <div class="card"
+        style="border-left-color: var(--dourado); display: flex; align-items: center; justify-content: center; padding: 1.5rem; margin-bottom: 1.5rem;">
+        <div
+          style="font-size:0.8rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--verde-escuro); font-weight:700; text-align:center;">
+          CATECISMO MAIOR DE WESTMINSTER</div>
+      </div>
+
+      <div class="catec-pergunta">
+        <p>Pergunta 1. Qual é o fim supremo e principal do homem?</p>
+      </div>
+      <div class="catec-resposta">
+        <strong>Resposta:</strong> O fim supremo e principal do homem é glorificar a Deus<sup>1</sup> e alegrar-se nele para sempre.<sup>2</sup>
+<br><br>
+<div class="ref" style="font-size:0.75rem; color: #888;">Referências: <sup>1</sup> Rm 11.36; 1Co 10.31; <sup>2</sup> Sl 73.24-26; Jo 17.22-24</div>
+      </div>
+
+      <div class="rodape-secao">
+        <div class="rodape-logo-text">IP Abolição</div>
+        <div class="rodape-versic">"Apeguemo-nos com firmeza à esperança que professamos, pois aquele que prometeu é
+          fiel." — Hb 10.23</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="escola-dominical">
+    <div class="secao-header">
+      <button class="btn-voltar" onclick="voltarCapa()">← Voltar</button>
+      <span class="secao-icone-topo">📚</span>
+      <h2 class="secao-titulo">ED /<br>Ensino</h2>
+    </div>
+    <div class="secao-corpo">
+      <div class="historia-abas" style="margin-bottom: 2rem;">
+        <button class="aba-btn ativa" onclick="trocarAba('ebd-escola')">📚 Escola Dominical</button>
+        <button class="aba-btn" onclick="trocarAba('ebd-discipulado')">🧭 Discipulado</button>
+        <button class="aba-btn" onclick="trocarAba('ebd-online')">💻 Curso Online</button>
+      </div>
+
+      <div id="aba-ebd-escola" class="aba-conteudo ativa">
+        <div class="card" style="text-align: center; border-left: none; padding: 1.5rem;">
+          <h3 style="color: var(--cor-primaria); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;">Escola Dominical</h3>
+          <p style="color: var(--cor-texto-suave); font-size: 0.95rem; margin-top: 0.5rem; line-height: 1.6;">Acesse os materiais principais da Escola Dominical da igreja pelo link abaixo.</p>
+          <div style="margin-top: 1.5rem; display:flex; flex-direction:column; gap:0.85rem;">
+            <a id="link-sala-adultos" href="https://drive.google.com/drive/folders/1a57KBmNiHKOxq-no2Ko5nAeM4NUu9nI2?usp=drive_link" target="_blank" class="btn-download" style="padding: 1rem 2rem; border-radius: 12px; display: inline-flex; width: 100%; justify-content: center; font-size: 1rem;">
+  <span style="color:#fff; font-weight:700;">Sala dos adultos</span>
+</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="aba-ebd-discipulado" class="aba-conteudo">
+        <div class="card" style="border-left-color: var(--cor-primaria);">
+          <div class="card-titulo" style="font-size: 1.1rem; color: var(--cor-primaria-2);">Discipulado</div>
+          <p style="font-size:0.9rem; margin-bottom: 1.2rem; color:var(--cor-texto-suave);">Materiais e acesso rápido para a caminhada de discipulado da igreja.</p>
+          <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+            <a href="https://drive.google.com/drive/folders/1Sa1v2AHgFmVZ1raf8exFmtMDyzdhwxE2?usp=drive_link" target="_blank" class="aba-btn" style="border-color: rgba(11,93,59,0.2); justify-content: flex-start; padding-left: 1.2rem;">
+  🧭 Pasta de Discipulado
+</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="aba-ebd-online" class="aba-conteudo">
+        <div class="card" style="border-left-color: var(--cor-secundaria);">
+          <div class="card-titulo" style="font-size: 1.1rem; color: var(--cor-secundaria);">💻 Curso Online</div>
+          <p style="font-size:0.92rem; margin-bottom: 0.7rem; color:var(--cor-texto-suave);">Espaço reservado para os cursos online do ministério de ensino.</p>
+<p style="font-size:0.92rem; color:var(--cor-texto); line-height:1.7;">Quando o link oficial do curso estiver disponível, ele poderá ser inserido aqui mantendo este mesmo grupo de ensino.</p>
+          <div style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1rem;">
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="rodape-secao">
+        <div class="rodape-logo-text">IP Abolição</div>
+        <div class="rodape-versic">"Crescei na graça e no conhecimento." — 2Pe 3.18</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="aniversariantes">
+    <div class="secao-header">
+      <button class="btn-voltar" onclick="voltarCapa()">← Voltar</button>
+      <span class="secao-icone-topo">🎉</span>
+      <h2 class="secao-titulo">Aniversariantes</h2>
+    </div>
+    <div class="secao-corpo">
+      <div class="aniv-list">
+        <div class="aniv-item"><div class="aniv-dia">--</div><span class="aniv-nome">Lista de aniversariantes a ser preenchida pelo pastor.</span></div>
+      </div>
+      <div class="rodape-secao">
+        <div class="rodape-logo-text">IP Abolição</div>
+        <div class="rodape-versic">"Ensina-nos a contar os nossos dias, para que alcancemos coração sábio." — Sl 90.12
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="dizimos">
+    <div class="secao-header">
+      <button class="btn-voltar" onclick="voltarCapa()">← Voltar</button>
+      <span class="secao-icone-topo">🙏</span>
+      <h2 class="secao-titulo">Dízimos<br>e Ofertas</h2>
+    </div>
+    <div class="secao-corpo">
+
+      <div class="pix-card">
+        <h3>Igreja Presbiteriana do Abolição</h3>
+        <div class="pix-linha">
+          <span class="key">Banco</span>
+          <span class="val">Sicoob</span>
+        </div>
+        <div class="pix-linha">
+          <span class="key">Agência</span>
+          <span class="val">4194</span>
+        </div>
+        <div class="pix-linha">
+          <span class="key">Conta corrente</span>
+          <span class="val">18.927-8</span>
+        </div>
+        <div class="pix-chave-box"
+          style="display:flex; align-items:center; justify-content:space-between; gap:0.75rem;">
+          <div>
+            <div class="pix-label">Chave PIX (CNPJ)</div>
+            <div class="pix-val" id="cnpj-text">24.529.299/0001-34</div>
+          </div>
+          <button onclick="copiarCNPJ()" id="btn-copiar"
+            style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.35); color:#fff; padding:0.4rem 0.8rem; border-radius:8px; font-size:0.72rem; font-weight:700; letter-spacing:0.05em; cursor:pointer; white-space:nowrap; transition:all 0.2s;">
+            📋 Copiar
+          </button>
+        </div>
+      </div>
+
+      <div
+        style="background:#fff; border-radius:16px; padding:1.5rem; margin-bottom:1rem; box-shadow:0 2px 12px rgba(0,0,0,0.06); text-align:center;">
+        <div
+          style="font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:#7a7a7a; margin-bottom:0.8rem; font-family:'Lato',sans-serif;">
+          PIX — QR Code</div>
+        <div style="max-width:160px; margin:0 auto; aspect-ratio:1 / 1; border:2px dashed rgba(31,74,51,0.18); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--verde-escuro); font-weight:700; font-size:0.8rem; background:rgba(240,245,238,0.65);">
+          QR indisponível
+        </div>
+        <img src="imagens/qrcode.jpeg" alt="QR Code PIX"
+          style="width:160px; height:160px; border-radius:8px; display:none; margin:0 auto;"
+          onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';"
+          onload="this.style.display='block'; this.previousElementSibling.style.display='none';" />
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="avisos">
+    <div class="secao-header">
+      <button class="btn-voltar" onclick="voltarCapa()">← Voltar</button>
+      <span class="secao-icone-topo">📢</span>
+      <h2 class="secao-titulo">Avisos<br>da Igreja</h2>
+    </div>
+    <div class="secao-corpo">
+
+      <div class="card" id="uso-imagem" style="border-left-color: var(--cinza-suave);">
+        <div class="card-titulo" style="color: var(--verde-escuro);">Uso de Imagem</div>
+        <p style="font-size:0.88rem; margin-bottom:0.7rem;">Comunicamos que, durante nossos cultos e eventos, realizamos
+          filmagens e fotografias com o objetivo de promover institucionalmente as atividades da nossa Igreja. A captura
+          de imagens individuais poderá ocorrer eventualmente.</p>
+        <p style="font-size:0.88rem; margin-bottom:0.7rem;">Caso tenha alguma restrição em relação ao uso de sua imagem,
+          solicitamos que entre em contato com um dos membros do Departamento de Mídia, que estará pronto para lhe
+          auxiliar.</p>
+        <p style="font-size:0.88rem; margin-bottom:0.7rem;">Ao ingressar em nosso templo, você reconhece e concorda com
+          a utilização de sua imagem para tais finalidades. Ressaltamos que a gravação ou transmissão de qualquer
+          conteúdo somente é permitida pelos canais oficiais da Igreja ou mediante consentimento formal do Conselho da
+          Igreja.</p>
+        <p style="font-size:0.88rem; font-style:italic; color:var(--cinza-suave); margin-bottom:0.6rem;">Em conformidade
+          com a Lei Geral de Proteção de Dados – LGPD (Lei nº 13.709/2018), com o art. 20 do Código Civil (Lei nº
+          10.406/2002) e com a Lei de Direitos Autorais (Lei nº 9.610/1998).</p>
+      </div>
+
+      <div class="rodape-secao">
+        <div class="rodape-logo-text">IP Abolição</div>
+        <div class="rodape-versic">"Oh! quão bom e quão suave é que os irmãos vivam em união." — Sl 133.1</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="nossa-escola">
+    <div class="secao-header">
+      <button class="btn-voltar" onclick="voltarCapa()">← Voltar</button>
+      <span class="secao-icone-topo">🏫</span>
+      <h2 class="secao-titulo">Conheça a<br>Nossa Escola</h2>
+    </div>
+    <div class="secao-corpo">
+      <div class="card">
+        <div class="card-titulo">Ensino da Igreja</div>
+        <p style="font-size:0.95rem; line-height:1.75; color:var(--cor-texto);">A área de ensino da igreja reúne formação bíblica, discipulado e conteúdos de apoio para o crescimento espiritual da comunidade.</p>
+      </div>
+
+      <div class="card" style="border-left-color: var(--cor-primaria);">
+        <div class="card-titulo" style="color: var(--cor-primaria);">Escola Dominical</div>
+        <p style="font-size:0.9rem; margin-bottom:0.8rem; color:var(--cor-texto-suave);">Materiais e apoio para as classes da Escola Dominical.</p>
+        <a href="https://drive.google.com/drive/folders/1a57KBmNiHKOxq-no2Ko5nAeM4NUu9nI2?usp=drive_link" target="_blank" class="btn-download">📚 Abrir materiais</a>
+      </div>
+
+      <div class="card" style="border-left-color: var(--cor-primaria-2);">
+        <div class="card-titulo" style="color: var(--cor-primaria-2);">Discipulado</div>
+        <p style="font-size:0.9rem; margin-bottom:0.8rem; color:var(--cor-texto-suave);">Conteúdos para acompanhamento, formação e amadurecimento cristão.</p>
+        <a href="https://drive.google.com/drive/folders/1Sa1v2AHgFmVZ1raf8exFmtMDyzdhwxE2?usp=drive_link" target="_blank" class="btn-download" style="background: var(--cor-primaria-2);">🧭 Abrir discipulado</a>
+      </div>
+
+      <div class="rodape-secao">
+        <div class="rodape-logo-text">IP Abolição</div>
+        <div class="rodape-versic">Ensino bíblico para todas as gerações</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function copiarCNPJ() {
+      const texto = document.getElementById('cnpj-text').innerText;
+      const btn = document.getElementById('btn-copiar');
+      navigator.clipboard.writeText(texto).then(() => {
+        btn.innerText = '✅ Copiado!';
+        setTimeout(() => { btn.innerHTML = '📋 Copiar'; }, 2000);
+      });
+    }
+    function abrirSecao(id) {
+      document.getElementById('capa').style.display = 'none';
+      document.querySelectorAll('.secao').forEach(s => s.classList.remove('ativa'));
+      document.getElementById(id).classList.add('ativa');
+      window.scrollTo(0, 0);
+    }
+    function trocarAba(id) {
+      const alvo = window.event?.currentTarget || window.event?.target?.closest('.aba-btn');
+      const grupo = alvo ? alvo.parentElement : null;
+      const conteudo = document.getElementById('aba-' + id);
+      const escopo = conteudo ? conteudo.parentElement : null;
+      if (!conteudo || !grupo || !escopo) return;
+      escopo.querySelectorAll(':scope > .aba-conteudo').forEach(el => el.classList.remove('ativa'));
+      grupo.querySelectorAll('.aba-btn').forEach(btn => btn.classList.remove('ativa'));
+      conteudo.classList.add('ativa');
+      if (alvo) alvo.classList.add('ativa');
+    }
+    function voltarCapa() {
+      document.querySelectorAll('.secao').forEach(s => s.classList.remove('ativa'));
+      document.getElementById('capa').style.display = '';
+      window.scrollTo(0, 0);
+    }
+  </script>
+  
+  <script>
+    function iconMarkup(id, filled = false) {
+      return `<svg class="icon-svg${filled ? ' fill' : ''}" aria-hidden="true"><use href="#${id}"></use></svg>`;
+    }
+
+    function setIcon(selector, iconId, filled = false) {
+      document.querySelectorAll(selector).forEach(el => {
+        el.innerHTML = iconMarkup(iconId, filled);
+      });
+    }
+
+    function aplicarRefinosVisuais() {
+      const menuIcons = [
+        [`[onclick="abrirSecao('devocional')"] .icone`, 'icon-cross'],
+        [`[onclick="abrirSecao('programacao')"] .icone`, 'icon-calendar'],
+        [`[onclick="abrirSecao('liturgia')"] .icone`, 'icon-music'],
+        [`[onclick="abrirSecao('catecismo')"] .icone`, 'icon-scroll'],
+        [`[onclick="abrirSecao('aniversariantes')"] .icone`, 'icon-gift'],
+        [`[onclick="abrirSecao('dizimos')"] .icone`, 'icon-offering'],
+        [`[onclick="abrirSecao('avisos')"] .icone`, 'icon-bell'],
+        [`[onclick="abrirSecao('escola-dominical')"] .icone`, 'icon-book'],
+        [`[onclick="abrirSecao('nossa-escola')"] .icone`, 'icon-book'],
+        [`[onclick="abrirSecao('historia')"] .icone`, 'icon-building']
+      ];
+
+      const secaoIcons = [
+        ['#programacao .secao-icone-topo', 'icon-calendar'],
+        ['#liturgia .secao-icone-topo', 'icon-music'],
+        ['#catecismo .secao-icone-topo', 'icon-scroll'],
+        ['#aniversariantes .secao-icone-topo', 'icon-gift'],
+        ['#dizimos .secao-icone-topo', 'icon-offering'],
+        ['#avisos .secao-icone-topo', 'icon-bell'],
+        ['#escola-dominical .secao-icone-topo', 'icon-book'],
+        ['#nossa-escola .secao-icone-topo', 'icon-book'],
+        ['#historia .secao-icone-topo', 'icon-building']
+      ];
+
+      [...menuIcons, ...secaoIcons].forEach(([selector, iconId]) => setIcon(selector, iconId));
+
+      const mapaLink = document.querySelector(".mapa-link");
+      if (mapaLink) {
+        const texto = mapaLink.textContent.replace(/\s+/g, ' ').trim();
+        mapaLink.innerHTML = `${iconMarkup('icon-pin')}<span>${texto}</span>`;
+      }
+    }
+
+    aplicarRefinosVisuais();
+  </script>
+</body>
+</html>
