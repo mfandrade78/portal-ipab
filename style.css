@@ -47,31 +47,6 @@ body {
     margin-top: 6px;
 }
 
-/* versículo */
-.versiculo {
-    background: var(--g5);
-    border-left: 4px solid var(--g1);
-  margin: 1.25rem 1rem;
-    padding: 1rem 1.25rem;
-    border-radius: 0 10px 10px 0;
-}
-
-.versiculo p {
-    font-size: 14px; 
-    font-style: italic; 
-    color: #2d4a1e; 
-    line-height: 1.65;
-}
-
-.versiculo span {
-    font-size: 12px;
-    color: var(--g2);
-    font-weight: 600;
-    font-style: normal;
-    display: block;
-    margin-top: 6px;
-}
-
 /* section label */
 .section-label {
     font-size: 11px;
@@ -178,7 +153,7 @@ body {
   /* ── redes sociais ── */
   .social-row {
     display: flex;
-    gap: 10px;
+    gap: 35px;
     padding: 0 1rem;
     flex-wrap: wrap;
   }
@@ -195,9 +170,9 @@ body {
     transition: opacity 0.15s;
   }
   .social-btn:hover { opacity: 0.75; }
-  .s-ig  { background: #fff0f7; border-color: #e1306c; color: #e1306c; }
-  .s-yt  { background: #fff2f2; border-color: #ff0000; color: #cc0000; }
-  .s-fb  { background: #eef3ff; border-color: #1877f2; color: #1877f2; }
+  .s-ig  { background: #fff0f7; border-color: #30e1d5; color: #117f74; }
+  .s-yt  { background: #fff2f2; border-color: #30e1d5; color: #117f74; }
+  .s-fb  { background: #eef3ff; border-color: #30e1d5; color: #117f74; }
  
   /* ── localização ── */
   .map-card {
